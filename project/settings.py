@@ -174,6 +174,18 @@ JAZZMIN_SETTINGS = {
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,}
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'mohamedelazab2017@gmail.com'
+EMAIL_HOST_PASSWORD = 'fcifgaaquinsbtdo'
+
+EMAIL_USE_SSL = False
 
 AUTHENTICATION_BACKENDS=['accounts.backend.Login_Username_Email']
