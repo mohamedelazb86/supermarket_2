@@ -174,3 +174,4 @@ JAZZMIN_SETTINGS = {
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,}
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
