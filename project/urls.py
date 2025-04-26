@@ -24,7 +24,12 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+
+    # blog
     path('blog/',include('blog.urls')),
+
+    # product
+    path('product/',include('product.urls')),
 
     path('summernote/', include('django_summernote.urls')),
 ]
