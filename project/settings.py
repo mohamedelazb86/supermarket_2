@@ -43,9 +43,12 @@ INSTALLED_APPS = [
 
     # MY PACKAGE
     "django_bootstrap5",
+    "taggit",
+    'django_summernote', 
 
     # MY APPS
-    
+    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -195,3 +198,5 @@ EMAIL_HOST_PASSWORD = 'fcifgaaquinsbtdo'
 EMAIL_USE_SSL = False
 
 AUTHENTICATION_BACKENDS=['accounts.backend.Login_Username_Email']
+
+LOGIN_REDIRECT_URL = '/'
