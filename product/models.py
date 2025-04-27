@@ -22,7 +22,7 @@ class Product(models.Model):
     brand=models.ForeignKey('Brand',related_name='product_brand',on_delete=models.SET_NULL,null=True,blank=True)
     tags = TaggableManager()
     slug=models.SlugField(null=True,blank=True)
-    quantity=models.IntegerField
+    quantity=models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -30,6 +30,26 @@ class Product(models.Model):
     def save(self,*args,**kwargs):
         self.slug=slugify(self.name)
         super(Product,self).save(*args,**kwargs)
+
+    @property
+    def review_count(self):
+        reviews=self.product_review.all().count()
+
+        return reviews
+    
+    @property
+    def avg_rate(self):
+        total=0
+        reviews=self.product_review.all()
+        if len(reviews) > 0:
+            for item in reviews:
+                total +=item.rate
+            avg=total/len(reviews)
+        else:
+            avg=0
+        return avg
+
+
 
 class Brand(models.Model):
     name=models.CharField(max_length=120)

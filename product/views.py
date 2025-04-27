@@ -11,3 +11,14 @@ class Product_List(ListView):
 class Product_Detail(DetailView):
     model=Product
     template_name='product/product_detail.html'
+
+
+
+class Brand_List(ListView):
+    model=Brand
+    template_name='product/brand_list.html'
+    paginate_by=25
+
+class Brand_Detail(DetailView):
+    model=Brand
+    template_name='product/brand_detail.html'
