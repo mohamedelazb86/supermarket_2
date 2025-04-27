@@ -13,4 +13,7 @@ urlpatterns = [
     #product
     path('',views.Product_List.as_view(),name='product-list'),
     path('<slug:slug>',views.Product_Detail.as_view(),name='product-detail'),
+
+    # add review
+    path('add_review/<slug:slug>',views.add_review,name='add-review'),
 ]
