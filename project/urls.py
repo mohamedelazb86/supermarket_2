@@ -31,7 +31,11 @@ urlpatterns = [
     # product
     path('product/',include('product.urls')),
 
+    # settings
+    path('',include('settings.urls')),
+
     path('summernote/', include('django_summernote.urls')),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
